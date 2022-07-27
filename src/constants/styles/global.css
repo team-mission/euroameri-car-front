@@ -1,7 +1,38 @@
+@font-face {
+  font-family: NotoSans;
+  font-weight: 900;
+  src: url('../../assets/fonts/NotoSansKR-Black.otf');
+}
+@font-face {
+  font-family: NotoSans;
+  font-weight: 700;
+  src: url('../../assets/fonts/NotoSansKR-Bold.otf');
+}
+@font-face {
+  font-family: NotoSans;
+  font-weight: 500;
+  src: url('../../assets/fonts/NotoSansKR-Medium.otf');
+}
+@font-face {
+  font-family: NotoSans;
+  font-weight: 400;
+  src: url('../../assets/fonts/NotoSansKR-Regular.otf');
+}
+@font-face {
+  font-family: NotoSans;
+  font-weight: 300;
+  src: url('../../assets/fonts/NotoSansKR-Light.otf');
+}
+@font-face {
+  font-family: NotoSans;
+  font-weight: 100;
+  src: url('../../assets/fonts/NotoSansKR-Thin.otf');
+}
+
 *,
 *:before,
 *:after {
-  font-family: Pretendard;
+  font-family: NotoSans;
   box-sizing: border-box;
 }
 
