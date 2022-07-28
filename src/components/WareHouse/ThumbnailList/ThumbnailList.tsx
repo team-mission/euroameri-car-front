@@ -2,7 +2,11 @@ import { WAREHOUSE_IMG_COUNT, IMG_URL } from '@constants';
 import Thumbnail from '../Thumbnail/Thumbnail';
 import * as styles from './ThumbnailList.style';
 
-const ThumbnailList = () => {
+interface ThumbnailListProps {
+  onClickThumbnail: (url: string) => void;
+}
+
+const ThumbnailList = ({ onClickThumbnail }: ThumbnailListProps) => {
   const settings = {
     infinite: false,
     speed: 1000,
@@ -29,7 +33,7 @@ const ThumbnailList = () => {
       <styles.Title>창고 사진</styles.Title>
       <styles.SlideList {...settings}>
         {imgUrlArr.map((url) => (
-          <Thumbnail url={url} key={url} />
+          <Thumbnail url={url} key={url} onClick={onClickThumbnail} />
         ))}
       </styles.SlideList>
     </styles.ListSection>
