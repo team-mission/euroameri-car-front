@@ -1,15 +1,16 @@
 import Link from 'next/link';
 
+import { IMG_URL } from '@constants';
 import * as styles from './MainHeader.style';
 
 const MainHeader = () => (
   <styles.MainHeaderWrapper>
     <styles.LogoWrapper>
-      <styles.LogoImg src="/images/LogoRotated.png" />
+      <styles.LogoImg src={IMG_URL.logo_rotated} />
     </styles.LogoWrapper>
     <styles.Wrapper>
       <styles.HeaderImgWrapper>
-        <styles.HeaderImg src="/images/HeaderImg.png" />
+        <styles.HeaderImg src={IMG_URL.main_header} />
       </styles.HeaderImgWrapper>
       <styles.Navigation>
         <Link href="/" passHref>
