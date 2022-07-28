@@ -6,5 +6,5 @@ export const IMG_URL = {
   logo: '/images/Logo.png',
   logo_rotated: '/images/LogoRotated.png',
   main_header: '/images/HeaderImg.png',
-  storage_basic: '/images/storage/',
+  warehouse_basic: '/images/warehouse/',
 };

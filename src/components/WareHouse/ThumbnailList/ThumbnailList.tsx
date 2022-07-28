@@ -1,4 +1,4 @@
-import { STORAGE_IMG_COUNT, IMG_URL } from '@constants';
+import { WAREHOUSE_IMG_COUNT, IMG_URL } from '@constants';
 import Thumbnail from '../Thumbnail/Thumbnail';
 import * as styles from './ThumbnailList.style';
 
@@ -20,9 +20,9 @@ const ThumbnailList = () => {
     ],
   };
 
-  const imgUrlArr = Array(STORAGE_IMG_COUNT)
+  const imgUrlArr = Array(WAREHOUSE_IMG_COUNT)
     .fill(undefined)
-    .map((_, i) => `${IMG_URL.storage_basic}${i}.png`);
+    .map((_, i) => `${IMG_URL.warehouse_basic}${i}.png`);
 
   return (
     <styles.ListSection>

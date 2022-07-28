@@ -1,3 +1,3 @@
 export * from './compInfo';
-export * from './storage';
+export * from './warehouse';
 export * from './url';
