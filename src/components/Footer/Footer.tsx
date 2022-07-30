@@ -9,6 +9,9 @@ const Footer = () => (
       <styles.Text>{`Tel: ${COMP_INFO.number.tel_KR}`}</styles.Text>
       <styles.Text>{`Fax: ${COMP_INFO.number.fax_KR}`}</styles.Text>
     </styles.CompInfoWrapper>
+    <styles.EmailArea>
+      <styles.Text>{COMP_INFO.email.main}</styles.Text>
+    </styles.EmailArea>
     <styles.CompInfoWrapper>
       <styles.FlagWrapper src={IMG_URL.flag_US} />
       <styles.Text>{COMP_INFO.address.office_US}</styles.Text>

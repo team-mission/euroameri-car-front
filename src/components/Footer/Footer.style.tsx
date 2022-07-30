@@ -8,6 +8,7 @@ export const FooterWrapper = styled.footer`
   width: 100%;
   height: 150px;
   padding: 0 3rem;
+  background-color: whitesmoke;
 `;
 
 export const FlagWrapper = styled.img`
@@ -16,8 +17,19 @@ export const FlagWrapper = styled.img`
 `;
 
 export const CompInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
   height: 100%;
   padding: 5px 0;
+`;
+
+export const EmailArea = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 `;
 
 export const Text = styled.p`
