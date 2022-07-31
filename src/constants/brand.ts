@@ -2,6 +2,7 @@ export const BRAND_TYPE = {
   supercar: 'Supercar Auto Parts',
   european: 'European Auto Parts',
   us: 'The U.S. Auto Parts',
+  japan: 'Japanese Auto Parts',
 };
 
 export const BRAND_NAME = {
@@ -36,4 +37,5 @@ export const BRAND_NAME = {
     'Jeep',
     'Lincoln',
   ],
+  japan: ['Honda', 'Infiniti', 'Lexus', 'Nissan', 'Toyota'],
 };
