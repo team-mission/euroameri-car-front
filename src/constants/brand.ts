@@ -1,11 +1,11 @@
-export const BRAND_TYPE = {
+export const BRAND_LIST_TITLE = {
   supercar: 'Supercar Auto Parts',
-  european: 'European Auto Parts',
+  europe: 'European Auto Parts',
   us: 'The U.S. Auto Parts',
   japan: 'Japanese Auto Parts',
 };
 
-export const BRAND_NAME = {
+export const BRAND_LIST = {
   supercar: [
     'Aston_Martin',
     'Bentley',
@@ -15,7 +15,7 @@ export const BRAND_NAME = {
     'Maserati',
     'Rolls_Royce',
   ],
-  european: [
+  europe: [
     'Alfa_Romeo',
     'Audi',
     'BMW',
