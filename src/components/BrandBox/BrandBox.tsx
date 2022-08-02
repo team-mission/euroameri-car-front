@@ -3,14 +3,17 @@ import * as styles from './BrandBox.style';
 interface BrandBoxProps {
   brandImg: string;
   brandName: string;
+  viewModal?: (newBrand: string) => void;
 }
 
-const BrandBox = ({ brandImg, brandName }: BrandBoxProps) => (
+const BrandBox = ({ brandImg, brandName, viewModal }: BrandBoxProps) => (
   <styles.BrandBoxWrapper>
-    <styles.BrandLogo>
-      <styles.BrandLogoImg src={brandImg} />
-    </styles.BrandLogo>
-    <styles.BrandName>{brandName.replace('_', ' ')}</styles.BrandName>
+    <styles.BrandBoxContent onClick={() => viewModal?.(brandName)}>
+      <styles.BrandLogo>
+        <styles.BrandLogoImg src={brandImg} />
+      </styles.BrandLogo>
+      <styles.BrandName>{brandName.replace('_', ' ')}</styles.BrandName>
+    </styles.BrandBoxContent>
   </styles.BrandBoxWrapper>
 );
 

@@ -1,3 +1,3 @@
-import BrandWrapper from './BrandContainer';
+import BrandContainer from './BrandContainer';
 
-export default BrandWrapper;
+export default BrandContainer;
