@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const SubHeaderWrapper = styled.header`
+export const SubHeaderWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 67px;
@@ -16,12 +16,15 @@ export const SubHeaderContent = styled.div`
 `;
 
 export const LogoWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  width: 30%;
+  width: 10%;
 `;
 
 export const LogoImg = styled.img`
-  height: 100%;
+  height: 30%;
   width: 100%;
 `;
 

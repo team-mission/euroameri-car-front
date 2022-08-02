@@ -19,7 +19,7 @@ const MainHeader = () => (
         <Link href="/import" passHref>
           <styles.StyledNavItem>슈퍼카/일반 수입차 부품</styles.StyledNavItem>
         </Link>
-        <Link href="/research" passHref>
+        <Link href="/benchmark" passHref>
           <styles.StyledNavItem>연구용/벤치마킹 부품</styles.StyledNavItem>
         </Link>
         <Link href="/board" passHref>
