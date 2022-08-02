@@ -23,4 +23,6 @@ export const BrandLogoImg = styled.img`
 export const BrandName = styled.p`
   font-size: 0.75rem;
   text-align: center;
+  margin-top: 5px;
+  margin-bottom: 8px;
 `;

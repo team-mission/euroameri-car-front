@@ -5,7 +5,7 @@ export const BrandBoxListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
+  width: 275px;
   padding: 20px 15px;
 `;
 
