@@ -20,6 +20,7 @@ export const SlideList = styled(Slider)`
     left: unset;
     width: 2.5rem;
     height: 2.5rem;
+
     @media (max-width: 828px) {
       top: -1.25rem;
     }
@@ -43,6 +44,6 @@ export const SlideList = styled(Slider)`
   }
 
   & .slick-slide {
-    padding: 0 0.5rem;
+    padding: 0 5px;
   }
 `;

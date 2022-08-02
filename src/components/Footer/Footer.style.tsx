@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-// TODO: 디자인 수정
 export const FooterWrapper = styled.footer`
   display: flex;
   align-items: center;
