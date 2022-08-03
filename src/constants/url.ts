@@ -9,5 +9,6 @@ export const IMG_URL = {
   close_btn: '/images/Close.svg',
   warehouse_basic: '/images/warehouse/',
   brand_basic: '/images/brands/',
-  parts_basic: '/images/parts',
+  parts_basic: '/images/parts/',
+  benchmark_basic: '/images/benchmark/',
 };
