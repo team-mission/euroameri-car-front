@@ -1,5 +1,6 @@
 import { IMG_URL } from '@constants/url';
 import BrandBox from '@components/BrandBox';
+import ImgWrapper from '@components/ImgWrapper';
 import * as styles from './PartListModal.style';
 
 interface PartListModalProps {
@@ -10,9 +11,9 @@ interface PartListModalProps {
 const PartListModal = ({ brand, closeModal }: PartListModalProps) => {
   const partImgUrlArr = Array(4)
     .fill(undefined)
-    .map((_, i) => `${IMG_URL.parts_basic}/${brand}/${i}.png`);
+    .map((_, i) => `${IMG_URL.parts_basic}${brand}/${i}.png`);
 
-  const brandLogoImgUrl = `${IMG_URL.brand_basic}/${brand}.png`;
+  const brandLogoImgUrl = `${IMG_URL.brand_basic}${brand}.png`;
 
   const settings = {
     infinite: false,
@@ -30,14 +31,19 @@ const PartListModal = ({ brand, closeModal }: PartListModalProps) => {
           <styles.SlideList {...settings}>
             {partImgUrlArr.map((partImgUrl) => (
               <styles.PartImgWrapper key={partImgUrl}>
-                <styles.PartImg src={partImgUrl} />
+                <ImgWrapper
+                  src={partImgUrl}
+                  layout="intrinsic"
+                  width={1200}
+                  height={900}
+                />
               </styles.PartImgWrapper>
             ))}
           </styles.SlideList>
         </styles.PartListContent>
       )}
       <styles.CloseBtn onClick={closeModal}>
-        <styles.CloseImg src={IMG_URL.close_btn} />
+        <ImgWrapper src={IMG_URL.close_btn} />
       </styles.CloseBtn>
       <styles.Background onClick={closeModal} />
     </styles.PartListModalWrapper>

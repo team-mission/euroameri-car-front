@@ -58,11 +58,6 @@ export const SlideList = styled(Slider)`
 
 export const PartImgWrapper = styled.div``;
 
-export const PartImg = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
 export const CloseBtn = styled.button`
   z-index: 1;
   position: fixed;
@@ -78,11 +73,6 @@ export const CloseBtn = styled.button`
   font-size: 1.5rem;
   font-weight: 300;
   cursor: pointer;
-`;
-
-export const CloseImg = styled.img`
-  width: 100%;
-  height: 100%;
 `;
 
 export const Background = styled.div`

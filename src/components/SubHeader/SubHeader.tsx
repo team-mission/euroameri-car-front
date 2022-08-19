@@ -1,4 +1,5 @@
 import { IMG_URL } from '@constants';
+import ImgWrapper from '@components/ImgWrapper';
 import * as styles from './SubHeader.style';
 
 interface SubHeaderProps {
@@ -9,7 +10,9 @@ const SubHeader = ({ title }: SubHeaderProps) => (
   <styles.SubHeaderWrapper>
     <styles.SubHeaderContent>
       <styles.LogoWrapper>
-        <styles.LogoImg src={IMG_URL.logo} />
+        <styles.LogoImg>
+          <ImgWrapper src={IMG_URL.logo} />
+        </styles.LogoImg>
       </styles.LogoWrapper>
       <styles.Title>{title}</styles.Title>
     </styles.SubHeaderContent>

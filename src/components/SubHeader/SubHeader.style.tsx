@@ -23,7 +23,7 @@ export const LogoWrapper = styled.div`
   width: 10%;
 `;
 
-export const LogoImg = styled.img`
+export const LogoImg = styled.div`
   height: 30%;
   width: 100%;
 `;

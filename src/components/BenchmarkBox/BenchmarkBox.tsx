@@ -1,3 +1,4 @@
+import ImgWrapper from '@components/ImgWrapper';
 import * as styles from './BenchmarkBox.style';
 
 interface BenchmarkBoxProps {
@@ -8,7 +9,7 @@ interface BenchmarkBoxProps {
 const BenchmarkBox = ({ brandImg, benchmarkInfos }: BenchmarkBoxProps) => (
   <styles.BenchmarkBoxWrapper>
     <styles.BrandImgWrapper>
-      <styles.BrandImg src={brandImg} />
+      <ImgWrapper src={brandImg} />
     </styles.BrandImgWrapper>
     <styles.ContentWrapper>
       {benchmarkInfos.map((info) => (
