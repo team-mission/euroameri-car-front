@@ -10,7 +10,8 @@ export const FooterWrapper = styled.footer`
   background-color: whitesmoke;
 `;
 
-export const FlagWrapper = styled.img`
+export const FlagImgWrapper = styled.div`
+  position: relative;
   width: 100px;
   height: 40px;
 `;
@@ -18,7 +19,6 @@ export const FlagWrapper = styled.img`
 export const CompInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   height: 100%;
   padding: 5px 0;

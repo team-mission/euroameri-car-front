@@ -9,15 +9,11 @@ export const BenchmarkBoxWrapper = styled.div`
 `;
 
 export const BrandImgWrapper = styled.div`
+  position: relative;
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-`;
-
-export const BrandImg = styled.img`
-  width: 100%;
-  height: 100%;
 `;
 
 export const ContentWrapper = styled.div`

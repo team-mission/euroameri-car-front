@@ -1,16 +1,17 @@
 import Link from 'next/link';
 
 import { IMG_URL } from '@constants';
+import ImgWrapper from '@components/ImgWrapper';
 import * as styles from './MainHeader.style';
 
 const MainHeader = () => (
   <styles.MainHeaderWrapper>
     <styles.LogoWrapper>
-      <styles.LogoImg src={IMG_URL.logo_rotated} />
+      <ImgWrapper src={IMG_URL.logo_rotated} placeholder="empty" priority />
     </styles.LogoWrapper>
     <styles.Wrapper>
       <styles.HeaderImgWrapper>
-        <styles.HeaderImg src={IMG_URL.main_header} />
+        <ImgWrapper src={IMG_URL.main_header} placeholder="empty" priority />
       </styles.HeaderImgWrapper>
       <styles.Navigation>
         <Link href="/" passHref>

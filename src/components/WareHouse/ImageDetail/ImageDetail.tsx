@@ -1,3 +1,4 @@
+import ImgWrapper from '@components/ImgWrapper';
 import * as styles from './ImageDetail.style';
 
 interface ImageDetailProps {
@@ -5,9 +6,9 @@ interface ImageDetailProps {
 }
 
 const ImageDetail = ({ url }: ImageDetailProps) => (
-  <styles.ImgWrapper>
-    <styles.DetailImg src={url} />
-  </styles.ImgWrapper>
+  <styles.ImgContainer>
+    <ImgWrapper src={url} layout="intrinsic" width={1200} height={900} />
+  </styles.ImgContainer>
 );
 
 export default ImageDetail;
