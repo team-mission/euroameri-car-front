@@ -1,3 +1,4 @@
+import ImgWrapper from '@components/ImgWrapper';
 import * as styles from './Thumbnail.style';
 
 interface ThumbnailProps {
@@ -7,7 +8,7 @@ interface ThumbnailProps {
 
 const Thumbnail = ({ url, onClick }: ThumbnailProps) => (
   <styles.StyledThumbnail onClick={() => onClick?.(url)}>
-    <styles.ThumbnailImg src={url} />
+    <ImgWrapper src={url} layout="intrinsic" width="400" height="300" />
   </styles.StyledThumbnail>
 );
 

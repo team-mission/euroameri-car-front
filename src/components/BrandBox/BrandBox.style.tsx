@@ -26,11 +26,6 @@ export const BrandLogo = styled.div`
   padding: 3px;
 `;
 
-export const BrandLogoImg = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
 export const BrandName = styled.p`
   font-size: 0.75rem;
   text-align: center;

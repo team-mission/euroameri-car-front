@@ -12,19 +12,9 @@ export const LogoWrapper = styled.div`
   width: 5%;
 `;
 
-export const LogoImg = styled.img`
-  height: 100%;
-  width: 100%;
-`;
-
 export const HeaderImgWrapper = styled.div`
   width: 100%;
   height: 90%;
-`;
-
-export const HeaderImg = styled.img`
-  width: 100%;
-  height: 100%;
 `;
 
 // TODO: 네이밍
