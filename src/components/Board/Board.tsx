@@ -32,10 +32,10 @@ const Board = ({ postList }: BoardProps) => {
     <styles.TableWrapper
       columns={columns}
       dataSource={postList}
-      onRow={(record, rowIndex) => ({
+      onRow={(record: any) => ({
         onClick: (e) => {
           e.preventDefault();
-          return Number.isInteger(rowIndex) && movePostPage(rowIndex as number);
+          return Number.isInteger(record.id) && movePostPage(record.id);
         },
       })}
     />

@@ -1,5 +1,12 @@
-import { getFirestore, getDocs, addDoc, collection } from 'firebase/firestore';
-import firebaseApp, { firebaseConfig } from './firebase';
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  getDocs,
+  addDoc,
+  collection,
+} from 'firebase/firestore';
+import firebaseApp from './firebase';
 
 const db = getFirestore(firebaseApp);
 
@@ -16,11 +23,23 @@ interface PostDataType {
 }
 
 // 게시물 조회
-export const readDB = async () => {
+export const getPostDetail = async (pid: string) => {
+  const docRef = doc(db, 'posts', pid);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    return docSnap.data();
+  }
+
+  return null;
+};
+
+// 게시물 목록 조회
+export const getPostList = async () => {
   const querySnapshot = await getDocs(collection(db, 'posts'));
 
-  querySnapshot.forEach((doc) => {
-    const test = doc.data();
+  querySnapshot.forEach((docu) => {
+    const test = docu.data();
     console.log(test);
   });
 
@@ -28,7 +47,7 @@ export const readDB = async () => {
 };
 
 // 게시물 추가
-export const createDB = async (data: PostDataType) => {
+export const addPost = async (data: PostDataType) => {
   const docRef = await addDoc(collection(db, 'posts'), data);
 
   console.log(docRef);
