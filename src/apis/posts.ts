@@ -1,5 +1,5 @@
 import { getAsync, ApiResult } from './apiUtils';
-import { PostType } from './type';
+import { PostListType } from './type';
 
 /**
  * 게시물 목록 조회
@@ -9,8 +9,8 @@ import { PostType } from './type';
 export const getPostListAsync = async (
   page: number,
   display: number,
-): ApiResult<PostType[]> => {
-  const result = await getAsync<PostType[], any>(`/posts/`, {
+): ApiResult<PostListType> => {
+  const result = await getAsync<PostListType, any>(`/posts/`, {
     params: { page, display },
   });
 

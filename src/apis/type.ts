@@ -11,6 +11,11 @@ export interface PostType extends BasicType {
   secret: boolean;
 }
 
+export interface PostListType {
+  count: number;
+  data: PostType[];
+}
+
 export interface PostDetailType extends PostType {
   content: string;
   images: string[];
