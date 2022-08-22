@@ -19,11 +19,8 @@ export interface PostListType {
 export interface PostDetailType extends PostType {
   content: string;
   images: string[];
-}
-
-export interface PostDetailTypeForAdmin extends PostDetailType {
-  phone: string;
-  email: string;
+  phone?: string;
+  email?: string;
 }
 
 export interface AddPostType {
