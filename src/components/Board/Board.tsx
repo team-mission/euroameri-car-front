@@ -22,7 +22,7 @@ const Board = ({ postList, currentPage, totalSize }: BoardProps) => {
     },
     { title: '제목', dataIndex: 'title', key: 'title', ellipsis: true },
     {
-      title: '글쓴이',
+      title: '작성자',
       dataIndex: 'name',
       key: 'name',
       ellipsis: true,
