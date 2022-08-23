@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { message } from 'antd';
 
 import MainHeader from '@components/MainHeader';
 import SubHeader from '@components/SubHeader';
@@ -10,13 +11,16 @@ import Footer from '@components/Footer';
 
 import { getPostDetailAsync } from '@apis/post';
 import { PostDetailType } from '@apis/type';
+import InputModal from '@components/InputModal';
 
 const PostDetailPage: NextPage = () => {
   const router = useRouter();
   const postId = Number(router.query.pid);
 
-  const [postData, setPostData] = useState<PostDetailType | {}>({});
-  const [password, setPassword] = useState<string | undefined>(undefined);
+  const [postData, setPostData] = useState<PostDetailType | undefined>();
+  const [password, setPassword] = useState<string | undefined>();
+  const [showPwdInput, setShowPwdInput] = useState<boolean>(false);
+  const [isWrongPwd, setIsWrongPwd] = useState<boolean>(false);
 
   useEffect(() => {
     if (!router.isReady || !postId) {
@@ -27,20 +31,37 @@ const PostDetailPage: NextPage = () => {
       const res = await getPostDetailAsync(postId, password);
 
       if (res.isSuccess) {
+        setShowPwdInput(false);
+        setIsWrongPwd(false);
         setPostData(res.result);
+        return;
       }
 
-      // TODO: 에러 처리 (비밀번호?)
+      // 비밀번호 입력 띄우기
+      if (res.result.statusCode === 401) {
+        setShowPwdInput(true);
+
+        if (isWrongPwd) message.info('올바르지 않은 비밀번호입니다.');
+        setIsWrongPwd(true);
+      }
     }
 
     updateData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [password, postId, router.isReady]);
+
+  const submitPassword = useCallback((pwd: string) => {
+    setPassword(pwd);
+  }, []);
 
   return (
     <>
       <MainHeader />
       <SubHeader title="게시판" />
       <MainWrapper>
+        {showPwdInput && (
+          <InputModal title="password" submitPassword={submitPassword} />
+        )}
         <PostContent data={postData} />
       </MainWrapper>
       <Footer />
