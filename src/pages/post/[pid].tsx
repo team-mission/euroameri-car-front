@@ -18,7 +18,7 @@ const PostDetailPage: NextPage = () => {
   const postId = Number(router.query.pid);
 
   const [postData, setPostData] = useState<PostDetailType | undefined>();
-  const [password, setPassword] = useState<string | undefined>();
+  const [password, setPassword] = useState<string>('');
   const [showPwdInput, setShowPwdInput] = useState<boolean>(false);
   const [isWrongPwd, setIsWrongPwd] = useState<boolean>(false);
 
