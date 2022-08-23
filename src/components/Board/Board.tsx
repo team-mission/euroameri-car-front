@@ -1,5 +1,4 @@
 import { PostType } from '@apis/type';
-import { useRouter } from 'next/router';
 
 import * as styles from './Board.style';
 
@@ -7,11 +6,17 @@ interface BoardProps {
   postList: PostType[];
   currentPage: number;
   totalSize: number;
+  movePostDetailPage: (id: number) => void;
+  changePage: (pageNum: number) => void;
 }
 
-const Board = ({ postList, currentPage, totalSize }: BoardProps) => {
-  const router = useRouter();
-
+const Board = ({
+  postList,
+  currentPage,
+  totalSize,
+  movePostDetailPage,
+  changePage,
+}: BoardProps) => {
   const columns = [
     {
       title: 'No',
@@ -30,22 +35,6 @@ const Board = ({ postList, currentPage, totalSize }: BoardProps) => {
     },
   ];
 
-  const movePostPage = (id: number) => {
-    router.push(`/post/${id}`);
-  };
-
-  const changePage = (page: number) => {
-    router.push(
-      {
-        query: {
-          page,
-        },
-      },
-      undefined,
-      { scroll: false },
-    );
-  };
-
   return (
     <>
       <styles.TableWrapper
@@ -54,7 +43,7 @@ const Board = ({ postList, currentPage, totalSize }: BoardProps) => {
         onRow={(record: any) => ({
           onClick: (e) => {
             e.preventDefault();
-            return Number.isInteger(record.id) && movePostPage(record.id);
+            return Number.isInteger(record.id) && movePostDetailPage(record.id);
           },
         })}
         pagination={false}

@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react';
 
-import { IMG_URL } from '@constants';
 import ThumbnailList from './ThumbnailList';
 import ImageDetail from './ImageDetail';
 
