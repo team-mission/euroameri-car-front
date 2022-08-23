@@ -1,7 +1,6 @@
 import { postAsync, deleteAsync, ApiResult } from './apiUtils';
 import {
   PostDetailType,
-  PostDetailTypeForAdmin,
   AddPostType,
   AddPostInputType,
   PasswordInputType,
@@ -13,12 +12,12 @@ import {
  * @param password
  */
 export const getPostDetailAsync = async (postId: number, password?: string) => {
-  const result = await postAsync<
-    PostDetailType | PostDetailTypeForAdmin,
-    PasswordInputType
-  >(`/post/${postId}`, {
-    password,
-  });
+  const result = await postAsync<PostDetailType, PasswordInputType>(
+    `/post/${postId}`,
+    {
+      password,
+    },
+  );
 
   return result;
 };

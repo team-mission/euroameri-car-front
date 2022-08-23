@@ -1,44 +1,68 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { message } from 'antd';
 
 import MainHeader from '@components/MainHeader';
 import SubHeader from '@components/SubHeader';
 import MainWrapper from '@components/MainWrapper';
-
+import PostContent from '@components/PostContent';
 import Footer from '@components/Footer';
-import GuideMent from '@components/GuideMent';
 
-import { getPostDetail } from '@service/database';
+import { getPostDetailAsync } from '@apis/post';
+import { PostDetailType } from '@apis/type';
+import InputModal from '@components/InputModal';
 
 const PostDetailPage: NextPage = () => {
   const router = useRouter();
-  const { pid } = router.query;
+  const postId = Number(router.query.pid);
 
-  const [postData, setPostData] = useState({});
+  const [postData, setPostData] = useState<PostDetailType | undefined>();
+  const [password, setPassword] = useState<string | undefined>();
+  const [showPwdInput, setShowPwdInput] = useState<boolean>(false);
+  const [isWrongPwd, setIsWrongPwd] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!router.isReady) {
+    if (!router.isReady || !postId) {
       return;
     }
 
     async function updateData() {
-      const postDetailData = await getPostDetail(pid);
+      const res = await getPostDetailAsync(postId, password);
 
-      if (postDetailData) {
-        setPostData(postDetailData);
+      if (res.isSuccess) {
+        setShowPwdInput(false);
+        setIsWrongPwd(false);
+        setPostData(res.result);
+        return;
+      }
+
+      // 비밀번호 입력 띄우기
+      if (res.result.statusCode === 401) {
+        setShowPwdInput(true);
+
+        if (isWrongPwd) message.info('올바르지 않은 비밀번호입니다.');
+        setIsWrongPwd(true);
       }
     }
 
     updateData();
-  }, [pid, router.isReady]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [password, postId, router.isReady]);
+
+  const submitPassword = useCallback((pwd: string) => {
+    setPassword(pwd);
+  }, []);
 
   return (
     <>
       <MainHeader />
       <SubHeader title="게시판" />
       <MainWrapper>
-        <h1>게시물 작성자: {postData.name}</h1>
+        {showPwdInput && (
+          <InputModal title="password" submitPassword={submitPassword} />
+        )}
+        <PostContent data={postData} />
       </MainWrapper>
       <Footer />
     </>
