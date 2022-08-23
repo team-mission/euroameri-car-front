@@ -1,12 +1,17 @@
-import { WAREHOUSE_IMG_COUNT, IMG_URL } from '@constants';
 import Thumbnail from '../Thumbnail/Thumbnail';
 import * as styles from './ThumbnailList.style';
 
 interface ThumbnailListProps {
+  images: string[];
+  title: string;
   onClickThumbnail: (url: string) => void;
 }
 
-const ThumbnailList = ({ onClickThumbnail }: ThumbnailListProps) => {
+const ThumbnailList = ({
+  images,
+  title,
+  onClickThumbnail,
+}: ThumbnailListProps) => {
   const settings = {
     infinite: false,
     speed: 1000,
@@ -24,15 +29,11 @@ const ThumbnailList = ({ onClickThumbnail }: ThumbnailListProps) => {
     ],
   };
 
-  const imgUrlArr = Array(WAREHOUSE_IMG_COUNT)
-    .fill(undefined)
-    .map((_, i) => `${IMG_URL.warehouse_basic}${i}.png`);
-
   return (
     <styles.ListSection>
-      <styles.Title>창고 사진</styles.Title>
+      <styles.Title>{title}</styles.Title>
       <styles.SlideList {...settings}>
-        {imgUrlArr.map((url) => (
+        {images.map((url) => (
           <Thumbnail url={url} key={url} onClick={onClickThumbnail} />
         ))}
       </styles.SlideList>

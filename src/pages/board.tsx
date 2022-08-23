@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import MainHeader from '@components/MainHeader';
 import SubHeader from '@components/SubHeader';
@@ -42,6 +42,28 @@ const BoardPage: NextPage = () => {
     updateData();
   }, [page, router.isReady]);
 
+  const movePostDetailPage = useCallback(
+    (id: number) => {
+      router.push(`/post/${id}`);
+    },
+    [router],
+  );
+
+  const changePage = useCallback(
+    (pageNum: number) => {
+      router.push(
+        {
+          query: {
+            page: pageNum,
+          },
+        },
+        undefined,
+        { scroll: false },
+      );
+    },
+    [router],
+  );
+
   return (
     <>
       <MainHeader />
@@ -51,7 +73,13 @@ const BoardPage: NextPage = () => {
           부품견적 요청 시, 차대번호, 사고부위 사진 및 연락처를 이메일 혹은
           게시판에 기재해 주세요.
         </GuideMent>
-        <Board postList={postList} currentPage={page} totalSize={totalSize} />
+        <Board
+          postList={postList}
+          currentPage={page}
+          totalSize={totalSize}
+          movePostDetailPage={movePostDetailPage}
+          changePage={changePage}
+        />
       </MainWrapper>
       <Footer />
     </>
