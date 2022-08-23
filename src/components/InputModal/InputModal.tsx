@@ -38,7 +38,7 @@ const InputModal = ({ title, submitPassword, submitId }: InputModalProps) => {
         <styles.FormWrapper name="login" onFinish={onSubmit}>
           {submitId && (
             <styles.InputWrapper
-              placeholder="ID"
+              placeholder="아이디"
               onChange={onChangeId}
               autoFocus
               required
@@ -47,7 +47,7 @@ const InputModal = ({ title, submitPassword, submitId }: InputModalProps) => {
           )}
           <styles.InputWrapper
             type="password"
-            placeholder="PASSWORD"
+            placeholder="비밀번호"
             onChange={onChangePwd}
             autoFocus
             required

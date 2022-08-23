@@ -12,7 +12,7 @@ export const ModalArea = styled.div`
   height: 100%;
   background-color: white;
   z-index: 1;
-  text-transform: capitalize;
+  text-transform: uppercase;
 `;
 
 export const Wrapper = styled.div`
