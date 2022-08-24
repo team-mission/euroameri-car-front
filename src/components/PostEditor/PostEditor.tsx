@@ -23,8 +23,7 @@ const PostEditor = () => {
     const { grecaptcha }: any = window;
     grecaptcha.ready(async () => {
       const token = await grecaptcha.execute(
-        // TODO
-        '6LfeB6QhAAAAAKqWkFbqT7ibvdB_9TsyCTcPypP-',
+        '6LdvRaEhAAAAAPrzniT5EuQSjH5STEzBPWMX14j0',
         {
           action: 'verify_gcaptcha',
         },
