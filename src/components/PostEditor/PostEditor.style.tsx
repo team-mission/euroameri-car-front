@@ -1,38 +1,38 @@
 import styled from '@emotion/styled';
-import { Form, Input } from 'antd';
+import { Form, Input, Button } from 'antd';
 
-export const ModalArea = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  z-index: 1;
-  text-transform: uppercase;
-`;
-
-export const Wrapper = styled.div`
+export const PostWriteForm = styled(Form)`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-`;
-
-export const Title = styled.h1`
-  font-size: 1.5rem;
-`;
-
-export const FormWrapper = styled(Form)`
   width: 100%;
+  height: 80vh;
+`;
+
+export const InfoInputListWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+`;
+
+export const InfoWrapper = styled.div`
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 40px;
+`;
+
+export const InputName = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 80px;
 `;
 
 export const InputBox = styled(Input)`
-  width: 100%;
   border-bottom: 1px solid rgba(222, 0, 17, 1);
 
   &:focus {
@@ -44,15 +44,31 @@ export const InputBox = styled(Input)`
   }
 `;
 
+export const ContentWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50%;
+  margin-top: 10px;
+`;
+
+export const ContentInputBox = styled(Input.TextArea)`
+  width: 100%;
+  height: 100%;
+`;
+
+export const ImageInputButton = styled(Button)``;
+
 export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  margin-top: 10px;
+  width: 35%;
+  margin-top: 30px;
 `;
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

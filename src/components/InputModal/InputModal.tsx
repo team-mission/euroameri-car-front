@@ -37,20 +37,20 @@ const InputModal = ({ title, submitPassword, submitId }: InputModalProps) => {
         <styles.Title>{title}</styles.Title>
         <styles.FormWrapper name="login" onFinish={onSubmit}>
           {submitId && (
-            <styles.InputWrapper
+            <styles.InputBox
               placeholder="아이디"
               onChange={onChangeId}
-              autoFocus
               required
+              autoFocus
               bordered={false}
             />
           )}
-          <styles.InputWrapper
+          <styles.InputBox
             type="password"
             placeholder="비밀번호"
             onChange={onChangePwd}
-            autoFocus
             required
+            autoFocus
             bordered={false}
           />
           <styles.ButtonWrapper>

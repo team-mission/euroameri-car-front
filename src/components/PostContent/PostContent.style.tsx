@@ -47,4 +47,5 @@ export const ContentArea = styled.div`
   padding: 20px;
   margin: 20px 0;
   border: 1px solid;
+  white-space: pre-wrap;
 `;
