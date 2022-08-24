@@ -23,6 +23,7 @@ const PostEditor = () => {
     const { grecaptcha }: any = window;
     grecaptcha.ready(async () => {
       const token = await grecaptcha.execute(
+        // TODO
         '6LfeB6QhAAAAAKqWkFbqT7ibvdB_9TsyCTcPypP-',
         {
           action: 'verify_gcaptcha',
@@ -77,7 +78,7 @@ const PostEditor = () => {
   // TODO: images, secret
 
   const onClickBack = useCallback(() => {
-    router.back();
+    router.push('/board');
   }, [router]);
 
   return (

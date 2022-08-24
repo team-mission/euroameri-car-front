@@ -1,16 +1,29 @@
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
+import { useAtom } from 'jotai';
 
 import { COMP_INFO, IMG_URL } from '@constants';
 import ImgWrapper from '@components/ImgWrapper';
+import { adminModeAtom } from '@store/atom';
+import { adminLogOutAsync } from '@apis/admin';
 import * as styles from './Footer.style';
 
 const Footer = () => {
   const router = useRouter();
 
-  const moveAdminLoginPage = useCallback(() => {
-    router.push(`/admin`);
-  }, [router]);
+  const [adminMode, setAdminMode] = useAtom(adminModeAtom);
+
+  const adminBtnClick = useCallback(async () => {
+    if (!adminMode) {
+      router.push(`/admin`);
+      return;
+    }
+
+    const result = await adminLogOutAsync();
+    if (result.isSuccess) {
+      setAdminMode(false);
+    }
+  }, [adminMode, router, setAdminMode]);
 
   return (
     <styles.FooterWrapper>
@@ -26,8 +39,8 @@ const Footer = () => {
         <styles.EmailArea>
           <styles.Text>{COMP_INFO.email.main}</styles.Text>
         </styles.EmailArea>
-        <styles.AdminButton onClick={moveAdminLoginPage}>
-          ADMIN
+        <styles.AdminButton onClick={adminBtnClick}>
+          {adminMode ? 'LOGOUT' : 'ADMIN'}
         </styles.AdminButton>
       </styles.Center>
       <styles.CompInfoWrapper>

@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback } from 'react';
 import { message } from 'antd';
+import { useAtom } from 'jotai';
 
 import MainHeader from '@components/MainHeader';
 import SubHeader from '@components/SubHeader';
@@ -9,10 +10,13 @@ import MainWrapper from '@components/MainWrapper';
 import InputModal from '@components/InputModal';
 import Footer from '@components/Footer';
 
+import { adminModeAtom } from '@store/atom';
 import { adminLoginAsync } from '@apis/admin';
 
 const AdminLoginPage: NextPage = () => {
   const router = useRouter();
+
+  const [adminMode, setAdminMode] = useAtom(adminModeAtom);
 
   const [adminId, setAdminId] = useState<string>('');
   const [adminPassword, setAdminPassword] = useState<string>('');
@@ -34,7 +38,8 @@ const AdminLoginPage: NextPage = () => {
       const res = await adminLoginAsync(adminId, adminPassword);
 
       if (res.isSuccess) {
-        router.back();
+        setAdminMode(true);
+        router.push('/board');
         return;
       }
 
@@ -45,7 +50,7 @@ const AdminLoginPage: NextPage = () => {
     }
 
     login();
-  }, [adminId, adminPassword, router]);
+  }, [adminId, adminPassword, router, setAdminMode]);
 
   return (
     <>
