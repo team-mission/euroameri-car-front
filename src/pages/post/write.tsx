@@ -11,7 +11,7 @@ const PostWritePage: NextPage = () => (
   <>
     <Script
       type="text/javascript"
-      src="https://www.google.com/recaptcha/api.js?render=6LfeB6QhAAAAAKqWkFbqT7ibvdB_9TsyCTcPypP-"
+      src="https://www.google.com/recaptcha/api.js?render=6LdvRaEhAAAAAPrzniT5EuQSjH5STEzBPWMX14j0"
     />
     <MainHeader />
     <SubHeader title="게시판" />

@@ -20,6 +20,7 @@
       "@apis/*": ["src/apis/*"],
       "@assets/*": ["src/assets/*"],
       "@store/*": ["src/store/*"],
+      "@utils/*": ["src/utils/*"],
       "@constants/*": ["src/constants/*"],
       "@constants": ["src/constants"]
     }
