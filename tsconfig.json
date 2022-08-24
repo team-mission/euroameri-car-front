@@ -19,6 +19,7 @@
       "@components/*": ["src/components/*"],
       "@apis/*": ["src/apis/*"],
       "@assets/*": ["src/assets/*"],
+      "@store/*": ["src/store/*"],
       "@constants/*": ["src/constants/*"],
       "@constants": ["src/constants"]
     }

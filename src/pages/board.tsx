@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback } from 'react';
+import { useAtom } from 'jotai';
 
 import MainHeader from '@components/MainHeader';
 import SubHeader from '@components/SubHeader';
@@ -11,11 +12,14 @@ import GuideMent from '@components/GuideMent';
 
 import { getPostListAsync } from '@apis/posts';
 import { PostType } from '@apis/type';
+import { adminModeAtom } from '@store/atom';
 
 const BoardPage: NextPage = () => {
   const router = useRouter();
   const page = Number(router.query.page) || 1;
   const display = 10;
+
+  const [adminMode, setAdminMode] = useAtom(adminModeAtom);
 
   const [postList, setPostList] = useState<PostType[]>([]);
   const [totalSize, setTotalSize] = useState<number>(0);
