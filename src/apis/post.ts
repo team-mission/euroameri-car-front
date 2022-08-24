@@ -42,6 +42,7 @@ export const addPostAsync = async (
   images: string[],
   secret: boolean,
   password: string,
+  token: string,
 ): ApiResult<AddPostType> => {
   const result = await postAsync<AddPostType, AddPostInputType>('/post', {
     title,
@@ -52,6 +53,7 @@ export const addPostAsync = async (
     images,
     secret,
     password,
+    token,
   });
 
   return result;

@@ -8,10 +8,10 @@ import SubHeader from '@components/SubHeader';
 import MainWrapper from '@components/MainWrapper';
 import PostContent from '@components/PostContent';
 import Footer from '@components/Footer';
+import InputModal from '@components/InputModal';
 
 import { getPostDetailAsync } from '@apis/post';
 import { PostDetailType } from '@apis/type';
-import InputModal from '@components/InputModal';
 
 const PostDetailPage: NextPage = () => {
   const router = useRouter();

@@ -46,6 +46,7 @@ export interface AddPostInputType {
   images: string[];
   secret: boolean;
   password: string;
+  token: string;
 }
 
 export interface PasswordInputType {
