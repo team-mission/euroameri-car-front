@@ -31,7 +31,7 @@ export const FormWrapper = styled(Form)`
   width: 100%;
 `;
 
-export const InputWrapper = styled(Input)`
+export const InputBox = styled(Input)`
   width: 100%;
   border-bottom: 1px solid rgba(222, 0, 17, 1);
 
