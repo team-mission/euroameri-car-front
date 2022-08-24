@@ -56,6 +56,10 @@ export const ContentWrapper = styled.div`
 export const ContentInputBox = styled(Input.TextArea)`
   width: 100%;
   height: 100%;
+
+  & > textarea {
+    resize: none;
+  }
 `;
 
 export const ImageInputButton = styled(Button)``;

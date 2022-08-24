@@ -8,11 +8,13 @@ import MainHeader from '@components/MainHeader';
 import SubHeader from '@components/SubHeader';
 import MainWrapper from '@components/MainWrapper';
 import PostContent from '@components/PostContent';
+import Comments from '@components/Comments';
 import Footer from '@components/Footer';
 import InputModal from '@components/InputModal';
 
 import { getPostDetailAsync } from '@apis/post';
-import { PostDetailType } from '@apis/type';
+import { getCommentsAsync } from '@apis/comment';
+import { PostDetailType, CommentType } from '@apis/type';
 import { adminModeAtom } from '@store/atom';
 
 const PostDetailPage: NextPage = () => {
@@ -22,6 +24,7 @@ const PostDetailPage: NextPage = () => {
   const [adminMode, setAdminMode] = useAtom(adminModeAtom);
 
   const [postData, setPostData] = useState<PostDetailType | undefined>();
+  const [commentsData, setCommentsData] = useState<CommentType[]>([]);
   const [password, setPassword] = useState<string>('');
   const [showPwdInput, setShowPwdInput] = useState<boolean>(false);
   const [isWrongPwd, setIsWrongPwd] = useState<boolean>(false);
@@ -38,6 +41,11 @@ const PostDetailPage: NextPage = () => {
         setShowPwdInput(false);
         setIsWrongPwd(false);
         setPostData(res.result);
+
+        const commRes = await getCommentsAsync(postId);
+        if (commRes.isSuccess) {
+          setCommentsData(commRes.result);
+        }
         return;
       }
 
@@ -58,6 +66,13 @@ const PostDetailPage: NextPage = () => {
     setPassword(pwd);
   }, []);
 
+  const refetch = useCallback(async () => {
+    const commRes = await getCommentsAsync(postId);
+    if (commRes.isSuccess) {
+      setCommentsData(commRes.result);
+    }
+  }, [postId]);
+
   return (
     <>
       <MainHeader />
@@ -67,6 +82,7 @@ const PostDetailPage: NextPage = () => {
           <InputModal title="password" submitPassword={submitPassword} />
         )}
         <PostContent data={postData} />
+        <Comments data={commentsData} postId={postId} refetch={refetch} />
       </MainWrapper>
       <Footer />
     </>
