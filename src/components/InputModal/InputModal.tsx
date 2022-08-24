@@ -28,7 +28,7 @@ const InputModal = ({ title, submitPassword, submitId }: InputModalProps) => {
   }, []);
 
   const onClickBack = useCallback(() => {
-    router.back();
+    router.push('/board');
   }, [router]);
 
   return (
