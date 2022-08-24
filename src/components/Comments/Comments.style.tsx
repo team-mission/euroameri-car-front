@@ -7,3 +7,13 @@ export const CommentItem = styled.li`
     white-space: pre-wrap;
   }
 `;
+
+export const CommentDelBtn = styled.button`
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+
+  :hover {
+    opacity: 0.7;
+  }
+`;
