@@ -1,31 +1,23 @@
 import { useRouter } from 'next/router';
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
 import * as styles from './InputModal.style';
 
 interface InputModalProps {
   title: string;
-  submitPassword?: (pwd: string) => void;
-  submitId?: (id: string) => void;
+  onIdChange?: (e: any) => void;
+  onPasswordChange?: (e: any) => void;
+  onSubmit?: () => void;
+  onClickCancel?: () => void;
 }
 
-const InputModal = ({ title, submitPassword, submitId }: InputModalProps) => {
+const InputModal = ({
+  title,
+  onIdChange,
+  onPasswordChange,
+  onSubmit,
+  onClickCancel,
+}: InputModalProps) => {
   const router = useRouter();
-
-  const [inputId, setInputId] = useState('');
-  const [inputPwd, setInputPwd] = useState('');
-
-  const onSubmit = useCallback(() => {
-    if (submitPassword) submitPassword(inputPwd);
-    if (submitId) submitId(inputId);
-  }, [inputId, inputPwd, submitId, submitPassword]);
-
-  const onChangePwd = useCallback((e: any) => {
-    setInputPwd(e.target.value);
-  }, []);
-
-  const onChangeId = useCallback((e: any) => {
-    setInputId(e.target.value);
-  }, []);
 
   const onClickBack = useCallback(() => {
     router.push('/board');
@@ -36,10 +28,10 @@ const InputModal = ({ title, submitPassword, submitId }: InputModalProps) => {
       <styles.Wrapper>
         <styles.Title>{title}</styles.Title>
         <styles.FormWrapper name="login" onFinish={onSubmit}>
-          {submitId && (
+          {onIdChange && (
             <styles.InputBox
               placeholder="아이디"
-              onChange={onChangeId}
+              onChange={onIdChange}
               required
               autoFocus
               bordered={false}
@@ -48,13 +40,13 @@ const InputModal = ({ title, submitPassword, submitId }: InputModalProps) => {
           <styles.InputBox
             type="password"
             placeholder="비밀번호"
-            onChange={onChangePwd}
+            onChange={onPasswordChange}
             required
             autoFocus
             bordered={false}
           />
           <styles.ButtonWrapper>
-            <styles.Button type="button" onClick={onClickBack}>
+            <styles.Button type="button" onClick={onClickCancel ?? onClickBack}>
               취소
             </styles.Button>
             <styles.Button type="submit" className="ok">

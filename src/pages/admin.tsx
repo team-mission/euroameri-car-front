@@ -21,35 +21,31 @@ const AdminLoginPage: NextPage = () => {
   const [adminId, setAdminId] = useState<string>('');
   const [adminPassword, setAdminPassword] = useState<string>('');
 
-  const submitAdminId = useCallback((id: string) => {
-    setAdminId(id);
+  const onIdChange = useCallback((e: any) => {
+    setAdminId(e.target.value);
   }, []);
 
-  const submitAdminPassword = useCallback((pwd: string) => {
-    setAdminPassword(pwd);
+  const onPasswordChange = useCallback((e: any) => {
+    setAdminPassword(e.target.value);
   }, []);
 
-  useEffect(() => {
+  const onSubmit = useCallback(async () => {
     if (!adminId || !adminPassword) {
+      message.warn('아이디, 비밀번호를 입력하세요');
+    }
+
+    const res = await adminLoginAsync(adminId, adminPassword);
+
+    if (res.isSuccess) {
+      setAdminMode(true);
+      router.push('/board');
       return;
     }
 
-    async function login() {
-      const res = await adminLoginAsync(adminId, adminPassword);
-
-      if (res.isSuccess) {
-        setAdminMode(true);
-        router.push('/board');
-        return;
-      }
-
-      // 로그인 실패
-      if (res.result.statusCode === 401) {
-        message.info('로그인 실패');
-      }
+    // 로그인 실패
+    if (res.result.statusCode === 401) {
+      message.warn('로그인 실패');
     }
-
-    login();
   }, [adminId, adminPassword, router, setAdminMode]);
 
   return (
@@ -59,8 +55,9 @@ const AdminLoginPage: NextPage = () => {
       <MainWrapper>
         <InputModal
           title="admin"
-          submitId={submitAdminId}
-          submitPassword={submitAdminPassword}
+          onIdChange={onIdChange}
+          onPasswordChange={onPasswordChange}
+          onSubmit={onSubmit}
         />
       </MainWrapper>
       <Footer />
