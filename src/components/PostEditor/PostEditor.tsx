@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useCallback } from 'react';
 import { addPostAsync } from '@apis/post';
-import { message, Checkbox } from 'antd';
+import { Checkbox, message } from 'antd';
 
 import * as styles from './PostEditor.style';
 
@@ -86,7 +86,9 @@ const PostEditor = () => {
 
   return (
     <styles.PostWriteForm onFinish={onSubmit}>
-      <Checkbox onChange={onSecretChange}>비밀글 여부</Checkbox>
+      <styles.SecretCheckboxArea>
+        <Checkbox onChange={onSecretChange}>비밀글 여부</Checkbox>
+      </styles.SecretCheckboxArea>
       <styles.InfoInputListWrapper>
         <styles.InfoWrapper>
           <styles.InputName>제목</styles.InputName>
@@ -104,6 +106,7 @@ const PostEditor = () => {
             onChange={onNameChange}
             required
             bordered={false}
+            maxLength={15}
           />
         </styles.InfoWrapper>
         <styles.InfoWrapper>
@@ -137,7 +140,7 @@ const PostEditor = () => {
         </styles.InfoWrapper>
       </styles.InfoInputListWrapper>
       <styles.ContentWrapper>
-        <styles.InputName>내용</styles.InputName>
+        <styles.InputName className="content">내용</styles.InputName>
         <styles.ContentInputBox
           value={writeData.content}
           onChange={onContentChange}
