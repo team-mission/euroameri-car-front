@@ -15,11 +15,27 @@ export const PaginiationWrapper = styled(Pagination)`
   justify-content: center;
   align-items: center;
   margin-top: 15px;
+
+  & .ant-pagination-item-active,
+  .ant-pagination-item-active > a {
+    color: #ce6326;
+    border-color: #ce6326;
+  }
+
+  & .ant-pagination-item > a,
+  .ant-pagination-next > button,
+  .ant-pagination-prev > button {
+    :hover {
+      color: #ce6326;
+      fill: #ce6326;
+    }
+  }
 `;
 
 export const PostWriteBtn = styled.button`
-  border: none;
+  border: 0.3px solid gray;
   border-radius: 3px;
+  margin-top: 20px;
   cursor: pointer;
 
   :hover {

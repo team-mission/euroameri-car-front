@@ -25,7 +25,7 @@ const Board = ({
       dataIndex: 'id',
       key: 'id',
       ellipsis: true,
-      width: 80, // TODO
+      width: 60,
     },
     { title: '제목', dataIndex: 'title', key: 'title', ellipsis: true },
     {
@@ -33,7 +33,7 @@ const Board = ({
       dataIndex: 'name',
       key: 'name',
       ellipsis: true,
-      width: 120, // TODO
+      width: 120,
     },
   ];
 
@@ -45,7 +45,7 @@ const Board = ({
   return (
     <>
       <styles.PostWriteBtn type="button" onClick={movePostWritePage}>
-        글 작성
+        글쓰기
       </styles.PostWriteBtn>
       <styles.TableWrapper
         columns={columns}
@@ -66,6 +66,7 @@ const Board = ({
         pageSize={10}
         showSizeChanger={false}
         hideOnSinglePage
+        size="small"
       />
     </>
   );
