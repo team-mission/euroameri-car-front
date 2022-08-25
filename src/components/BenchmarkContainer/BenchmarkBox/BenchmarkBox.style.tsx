@@ -1,11 +1,23 @@
 import styled from '@emotion/styled';
+import { MEDIA_QUERIES } from '@constants/styles';
 
 export const BenchmarkBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 23%;
   height: 170px;
-  padding: 10px;
+  margin: 1%;
+  box-shadow: 0 0 8px rgb(0 0 0 / 10%);
+
+  ${MEDIA_QUERIES.tablet} {
+    width: 31%;
+    margin: 1%;
+  }
+
+  ${MEDIA_QUERIES.mobile} {
+    width: 48%;
+    margin: 1%;
+  }
 `;
 
 export const BrandImgWrapper = styled.div`
@@ -31,4 +43,8 @@ export const ContentWrapper = styled.div`
 export const Text = styled.span`
   font-size: 0.75rem;
   text-transform: uppercase;
+
+  ${MEDIA_QUERIES.mobile} {
+    font-size: 0.6rem;
+  }
 `;
