@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { MEDIA_QUERIES } from '@constants/styles';
 
 export const BrandBoxWrapper = styled.div`
   position: relative;
@@ -7,6 +8,10 @@ export const BrandBoxWrapper = styled.div`
   align-items: flex-start;
   width: 33.3%;
   padding: 5px 10px;
+
+  ${MEDIA_QUERIES.tablet} {
+    width: 25%;
+  }
 `;
 
 export const BrandBoxContent = styled.div`
@@ -24,6 +29,11 @@ export const BrandLogo = styled.div`
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 3px;
+
+  ${MEDIA_QUERIES.tablet} {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const BrandName = styled.p`
@@ -31,4 +41,8 @@ export const BrandName = styled.p`
   text-align: center;
   margin-top: 5px;
   margin-bottom: 8px;
+
+  ${MEDIA_QUERIES.tablet} {
+    font-size: 0.85rem;
+  }
 `;

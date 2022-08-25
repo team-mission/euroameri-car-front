@@ -1,5 +1,5 @@
 import { IMG_URL } from '@constants/url';
-import BrandBox from '@components/BrandBox';
+import BrandBox from '@components/BrandContainer/BrandBox';
 import ImgWrapper from '@components/ImgWrapper';
 import * as styles from './PartListModal.style';
 

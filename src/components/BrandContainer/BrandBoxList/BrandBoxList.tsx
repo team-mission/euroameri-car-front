@@ -1,5 +1,5 @@
 import { IMG_URL } from '@constants/url';
-import BrandBox from '@components/BrandBox/BrandBox';
+import BrandBox from '../BrandBox';
 import * as styles from './BrandBoxList.style';
 
 interface BrandBoxListProps {

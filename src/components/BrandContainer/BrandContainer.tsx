@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
 
 import { BRAND_LIST, BRAND_LIST_TITLE } from '@constants/brand';
-import BrandBoxList from '@components/BrandBoxList';
 import PartListModal from '@components/PartListModal';
+import BrandBoxList from './BrandBoxList';
 import * as styles from './BrandContainer.style';
 
 const BrandContainer = () => {
