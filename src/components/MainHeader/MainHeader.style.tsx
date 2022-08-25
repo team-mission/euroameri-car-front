@@ -14,7 +14,7 @@ export const MainHeaderWrapper = styled.header`
 
   ${MEDIA_QUERIES.mobile} {
     flex-direction: column;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 `;
 

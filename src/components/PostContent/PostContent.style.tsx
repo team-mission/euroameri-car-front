@@ -82,6 +82,10 @@ export const DelBtn = styled.button`
   :hover {
     opacity: 0.8;
   }
+
+  ${MEDIA_QUERIES.mobile} {
+    font-size: 0.8rem;
+  }
 `;
 
 export const TitleBottom = styled.div`

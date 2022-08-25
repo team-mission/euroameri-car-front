@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Table, Pagination } from 'antd';
+import { MEDIA_QUERIES } from '@constants/styles';
 
 export const TableWrapper = styled(Table)`
   width: 100%;
@@ -40,5 +41,9 @@ export const PostWriteBtn = styled.button`
 
   :hover {
     opacity: 0.8;
+  }
+
+  ${MEDIA_QUERIES.mobile} {
+    font-size: 0.8rem;
   }
 `;
