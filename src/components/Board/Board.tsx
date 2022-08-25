@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
 import { PostType } from '@apis/type';
 
 import * as styles from './Board.style';
@@ -35,8 +37,16 @@ const Board = ({
     },
   ];
 
+  const router = useRouter();
+  const movePostWritePage = useCallback(() => {
+    router.push('/post/write');
+  }, [router]);
+
   return (
     <>
+      <styles.PostWriteBtn type="button" onClick={movePostWritePage}>
+        글 작성
+      </styles.PostWriteBtn>
       <styles.TableWrapper
         columns={columns}
         dataSource={postList}
