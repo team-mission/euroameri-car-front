@@ -9,11 +9,11 @@ export const CommentItem = styled.li`
 `;
 
 export const CommentDelBtn = styled.button`
-  border: none;
+  border: 0.3px solid gray;
+  border-radius: 3px;
   cursor: pointer;
-  border-radius: 2px;
 
   :hover {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 `;
