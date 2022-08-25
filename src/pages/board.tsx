@@ -70,7 +70,7 @@ const BoardPage: NextPage = () => {
 
   return (
     <>
-      <MainHeader />
+      <MainHeader title="게시판" />
       <SubHeader title="게시판" />
       <MainWrapper>
         <GuideMent>

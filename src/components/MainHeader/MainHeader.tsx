@@ -4,7 +4,11 @@ import { IMG_URL } from '@constants';
 import ImgWrapper from '@components/ImgWrapper';
 import * as styles from './MainHeader.style';
 
-const MainHeader = () => (
+interface MainHeaderProps {
+  title: string;
+}
+
+const MainHeader = ({ title }: MainHeaderProps) => (
   <styles.MainHeaderWrapper>
     <styles.LogoWrapper>
       <ImgWrapper src={IMG_URL.logo_rotated} placeholder="empty" priority />
@@ -24,9 +28,7 @@ const MainHeader = () => (
         <ImgWrapper src={IMG_URL.main_header} placeholder="empty" priority />
         <styles.HeaderTextWrapper>
           <styles.HeaderText>유로아메리카(주)</styles.HeaderText>
-          <styles.HeaderText className="second">
-            유럽 미국 일본 외산차 및 부품 유통
-          </styles.HeaderText>
+          <styles.HeaderText className="second">{title}</styles.HeaderText>
         </styles.HeaderTextWrapper>
       </styles.HeaderImgWrapper>
       <styles.Navigation>

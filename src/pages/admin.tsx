@@ -50,8 +50,8 @@ const AdminLoginPage: NextPage = () => {
 
   return (
     <>
-      <MainHeader />
-      <SubHeader title="게시판" />
+      <MainHeader title="관리자 로그인" />
+      <SubHeader title="관리자 로그인" />
       <MainWrapper>
         <InputModal
           title="admin"
