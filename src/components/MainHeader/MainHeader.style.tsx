@@ -108,10 +108,6 @@ export const StyledNavItem = styled.a`
     hover: {
       color: orange;
     }
-
-    :nth-child(2n - 1) {
-      border-right: 0.5px solid #505050;
-    }
   }
 `;
 
@@ -126,5 +122,9 @@ export const Navigation = styled.nav`
 
   ${MEDIA_QUERIES.mobile} {
     height: 20%;
+
+    a:nth-of-type(2n - 1) {
+      border-right: 0.5px solid #505050;
+    }
   }
 `;
