@@ -9,12 +9,12 @@ export const MainHeaderWrapper = styled.header`
   font-size: 1.05rem;
 
   ${MEDIA_QUERIES.tablet} {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   ${MEDIA_QUERIES.mobile} {
     flex-direction: column;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
 `;
 
@@ -69,10 +69,10 @@ export const HeaderTextWrapper = styled.div`
 
 export const HeaderText = styled.span`
   color: white;
-  font-size: 23px;
+  font-size: 1.5rem;
 
   &.second {
-    font-size: 18px;
+    font-size: 1.1rem;
   }
 `;
 
