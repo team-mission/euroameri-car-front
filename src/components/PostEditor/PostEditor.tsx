@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useCallback } from 'react';
 import { addPostAsync } from '@apis/post';
-import { message } from 'antd';
+import { message, Checkbox } from 'antd';
 
 import * as styles from './PostEditor.style';
 
@@ -74,7 +74,11 @@ const PostEditor = () => {
     setWriteData((prev) => ({ ...prev, content: e.target.value }));
   }, []);
 
-  // TODO: images, secret
+  const onSecretChange = useCallback((e: any) => {
+    setWriteData((prev) => ({ ...prev, secret: e.target.checked }));
+  }, []);
+
+  // TODO: images
 
   const onClickBack = useCallback(() => {
     router.push('/board');
@@ -82,6 +86,7 @@ const PostEditor = () => {
 
   return (
     <styles.PostWriteForm onFinish={onSubmit}>
+      <Checkbox onChange={onSecretChange}>비밀글 여부</Checkbox>
       <styles.InfoInputListWrapper>
         <styles.InfoWrapper>
           <styles.InputName>제목</styles.InputName>
