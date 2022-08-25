@@ -9,13 +9,29 @@ const MainHeader = () => (
     <styles.LogoWrapper>
       <ImgWrapper src={IMG_URL.logo_rotated} placeholder="empty" priority />
     </styles.LogoWrapper>
+    <styles.MobileLogoWrapper>
+      <ImgWrapper
+        src={IMG_URL.logo}
+        placeholder="empty"
+        priority
+        layout="intrinsic"
+        width={160}
+        height={30}
+      />
+    </styles.MobileLogoWrapper>
     <styles.Wrapper>
       <styles.HeaderImgWrapper>
         <ImgWrapper src={IMG_URL.main_header} placeholder="empty" priority />
+        <styles.HeaderTextWrapper>
+          <styles.HeaderText>유로아메리카(주)</styles.HeaderText>
+          <styles.HeaderText className="second">
+            유럽 미국 일본 외산차 및 부품 유통
+          </styles.HeaderText>
+        </styles.HeaderTextWrapper>
       </styles.HeaderImgWrapper>
       <styles.Navigation>
         <Link href="/" passHref>
-          <styles.StyledNavItem>유로 아메리카(주)</styles.StyledNavItem>
+          <styles.StyledNavItem>유로아메리카(주)</styles.StyledNavItem>
         </Link>
         <Link href="/import" passHref>
           <styles.StyledNavItem>슈퍼카/일반 수입차 부품</styles.StyledNavItem>
