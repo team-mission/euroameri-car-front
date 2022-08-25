@@ -16,3 +16,13 @@ export const PaginiationWrapper = styled(Pagination)`
   align-items: center;
   margin-top: 15px;
 `;
+
+export const PostWriteBtn = styled.button`
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  :hover {
+    opacity: 0.8;
+  }
+`;

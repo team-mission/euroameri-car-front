@@ -5,9 +5,10 @@ import * as styles from './PostContent.style';
 
 interface PostContentProps {
   data?: PostDetailType;
+  onDelete?: () => void;
 }
 
-const PostContent = ({ data }: PostContentProps) => (
+const PostContent = ({ data, onDelete }: PostContentProps) => (
   <>
     <styles.TitleArea>{data?.title}</styles.TitleArea>
     <styles.InfoWrapper>
@@ -33,6 +34,7 @@ const PostContent = ({ data }: PostContentProps) => (
       )}
       <styles.ContentArea>{data?.content}</styles.ContentArea>
     </styles.InfoWrapper>
+    <styles.DelBtn onClick={onDelete}>삭제</styles.DelBtn>
     {data && data.images?.length > 0 && (
       <Carousel images={data?.images} title="첨부 사진" />
     )}
