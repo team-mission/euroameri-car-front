@@ -29,6 +29,7 @@ export const BrandLogo = styled.div`
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 3px;
+  box-shadow: 0 0 8px rgb(0 0 0 / 10%);
 
   ${MEDIA_QUERIES.tablet} {
     width: 50px;
