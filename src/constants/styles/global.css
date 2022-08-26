@@ -1,38 +1,28 @@
 @font-face {
-  font-family: NotoSans;
-  font-weight: 900;
-  src: url('../../assets/fonts/NotoSansKR-Black.otf');
-}
-@font-face {
-  font-family: NotoSans;
+  font-family: NanumSquare;
   font-weight: 700;
-  src: url('../../assets/fonts/NotoSansKR-Bold.otf');
+  src: url('../../assets/fonts/NanumSquareEB.ttf');
 }
 @font-face {
-  font-family: NotoSans;
+  font-family: NanumSquare;
   font-weight: 500;
-  src: url('../../assets/fonts/NotoSansKR-Medium.otf');
+  src: url('../../assets/fonts/NanumSquareB.ttf');
 }
 @font-face {
-  font-family: NotoSans;
+  font-family: NanumSquare;
   font-weight: 400;
-  src: url('../../assets/fonts/NotoSansKR-Regular.otf');
+  src: url('../../assets/fonts/NanumSquareR.ttf');
 }
 @font-face {
-  font-family: NotoSans;
+  font-family: NanumSquare;
   font-weight: 300;
-  src: url('../../assets/fonts/NotoSansKR-Light.otf');
-}
-@font-face {
-  font-family: NotoSans;
-  font-weight: 100;
-  src: url('../../assets/fonts/NotoSansKR-Thin.otf');
+  src: url('../../assets/fonts/NanumSquareL.ttf');
 }
 
 *,
 *:before,
 *:after {
-  font-family: NotoSans;
+  font-family: NanumSquare;
   box-sizing: border-box;
 }
 
