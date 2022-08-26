@@ -53,6 +53,11 @@ export const InputBox = styled(Input)`
   &:hover {
     border-bottom: 1px solid rgba(222, 0, 17, 1);
   }
+
+  &.password {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
 `;
 
 export const ContentWrapper = styled.div`
