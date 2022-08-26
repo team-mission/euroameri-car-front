@@ -1,5 +1,5 @@
 import { IMG_URL } from '@constants/url';
-import BrandBox from '@components/BrandBox';
+import BrandBox from '@components/BrandContainer/BrandBox';
 import ImgWrapper from '@components/ImgWrapper';
 import * as styles from './PartListModal.style';
 
@@ -36,6 +36,7 @@ const PartListModal = ({ brand, closeModal }: PartListModalProps) => {
                   layout="intrinsic"
                   width={1200}
                   height={900}
+                  priority
                 />
               </styles.PartImgWrapper>
             ))}

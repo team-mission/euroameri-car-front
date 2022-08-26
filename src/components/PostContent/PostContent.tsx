@@ -11,6 +11,7 @@ interface PostContentProps {
 const PostContent = ({ data, onDelete }: PostContentProps) => (
   <>
     <styles.TitleArea>{data?.title}</styles.TitleArea>
+    <styles.TitleBottom />
     <styles.InfoWrapper>
       <styles.InfoArea>
         <styles.InfoName>작성자</styles.InfoName>

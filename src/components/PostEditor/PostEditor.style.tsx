@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Form, Input, Button } from 'antd';
+import { MEDIA_QUERIES } from '@constants/styles';
 
 export const PostWriteForm = styled(Form)`
   position: relative;
@@ -16,24 +17,34 @@ export const InfoInputListWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 80%;
+
+  ${MEDIA_QUERIES.mobile} {
+    width: 90%;
+  }
 `;
 
 export const InfoWrapper = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  height: 40px;
+  height: 35px;
 `;
 
 export const InputName = styled.div`
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 15px;
   width: 80px;
+
+  &.content {
+    justify-content: flex-start;
+  }
 `;
 
 export const InputBox = styled(Input)`
   border-bottom: 1px solid rgba(222, 0, 17, 1);
+  border-radius: 0;
 
   &:focus {
     border-bottom: 1px solid rgba(222, 0, 17, 1);
@@ -59,6 +70,15 @@ export const ContentInputBox = styled(Input.TextArea)`
 
   & > textarea {
     resize: none;
+
+    :hover {
+      border-color: rgba(217, 217, 217, 1);
+    }
+
+    :focus {
+      border-color: rgba(217, 217, 217, 1);
+      box-shadow: none;
+    }
   }
 `;
 
@@ -70,6 +90,10 @@ export const ButtonWrapper = styled.div`
   justify-content: space-between;
   width: 35%;
   margin-top: 30px;
+
+  ${MEDIA_QUERIES.mobile} {
+    width: 50%;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -88,4 +112,20 @@ export const StyledButton = styled.button`
   &.ok {
     background-color: rgba(222, 0, 17, 1);
   }
+
+  :hover {
+    opacity: 0.9;
+  }
+
+  ${MEDIA_QUERIES.mobile} {
+    border-radius: 20px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+`;
+
+export const SecretCheckboxArea = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 `;

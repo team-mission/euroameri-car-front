@@ -13,8 +13,8 @@ const PostWritePage: NextPage = () => (
       type="text/javascript"
       src="https://www.google.com/recaptcha/api.js?render=6LdvRaEhAAAAAPrzniT5EuQSjH5STEzBPWMX14j0"
     />
-    <MainHeader />
-    <SubHeader title="게시판" />
+    <MainHeader title="게시글 작성" />
+    <SubHeader title="게시글 작성" />
     <MainWrapper>
       <PostEditor />
     </MainWrapper>
