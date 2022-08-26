@@ -1,8 +1,3 @@
-import { atomWithStorage, createJSONStorage } from 'jotai/utils';
+import { atomWithStorage } from 'jotai/utils';
 
-const storage: any = createJSONStorage(() => sessionStorage);
-export const adminModeAtom = atomWithStorage<boolean>(
-  'adminMode',
-  false,
-  storage,
-);
+export const adminModeAtom = atomWithStorage<boolean>('adminMode', false);
