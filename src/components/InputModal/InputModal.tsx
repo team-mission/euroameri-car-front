@@ -39,6 +39,7 @@ const InputModal = ({
           )}
           <styles.InputBox
             type="password"
+            className="password"
             placeholder="비밀번호"
             onChange={onPasswordChange}
             required

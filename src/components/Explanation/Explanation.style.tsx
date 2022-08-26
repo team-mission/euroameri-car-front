@@ -4,6 +4,11 @@ import { MEDIA_QUERIES } from '@constants/styles';
 export const ExplainWrapper = styled.section`
   position: relative;
   width: 100%;
+  margin-top: 40px;
+
+  ${MEDIA_QUERIES.mobile} {
+    margin-top: 20px;
+  }
 `;
 
 export const Text = styled.p`

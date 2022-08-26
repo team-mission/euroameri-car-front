@@ -134,6 +134,7 @@ const PostEditor = () => {
             value={writeData.password}
             onChange={onPasswordChange}
             type="password"
+            className="password"
             required
             bordered={false}
           />
