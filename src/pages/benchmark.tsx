@@ -9,7 +9,7 @@ import GuideMent from '@components/GuideMent';
 
 const BenchmarkPage: NextPage = () => (
   <>
-    <MainHeader />
+    <MainHeader title="연구용/벤치마킹 부품" />
     <SubHeader title="연구용/벤치마킹 부품" />
     <MainWrapper>
       <GuideMent>

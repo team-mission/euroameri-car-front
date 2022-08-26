@@ -8,7 +8,13 @@ interface ThumbnailProps {
 
 const Thumbnail = ({ url, onClick }: ThumbnailProps) => (
   <styles.StyledThumbnail onClick={() => onClick?.(url)}>
-    <ImgWrapper src={url} layout="intrinsic" width="400" height="300" />
+    <ImgWrapper
+      src={url}
+      layout="intrinsic"
+      width="400"
+      height="300"
+      priority
+    />
   </styles.StyledThumbnail>
 );
 

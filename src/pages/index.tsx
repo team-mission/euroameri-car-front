@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <MainHeader />
+      <MainHeader title="유럽 미국 일본 외산차 및 부품 유통" />
       <MainWrapper>
         <Explanation />
         <Carousel images={imgUrlArr} title="창고 사진" />

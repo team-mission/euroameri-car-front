@@ -10,9 +10,14 @@ const SubHeader = ({ title }: SubHeaderProps) => (
   <styles.SubHeaderWrapper>
     <styles.SubHeaderContent>
       <styles.LogoWrapper>
-        <styles.LogoImg>
-          <ImgWrapper src={IMG_URL.logo} />
-        </styles.LogoImg>
+        <ImgWrapper
+          src={IMG_URL.logo}
+          placeholder="empty"
+          priority
+          layout="intrinsic"
+          width={140}
+          height={30}
+        />
       </styles.LogoWrapper>
       <styles.Title>{title}</styles.Title>
     </styles.SubHeaderContent>

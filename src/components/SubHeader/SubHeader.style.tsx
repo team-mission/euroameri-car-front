@@ -1,10 +1,16 @@
 import styled from '@emotion/styled';
+import { MEDIA_QUERIES } from '@constants/styles';
 
 export const SubHeaderWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 67px;
+  padding: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  ${MEDIA_QUERIES.mobile} {
+    display: none;
+  }
 `;
 
 export const SubHeaderContent = styled.div`
@@ -20,12 +26,6 @@ export const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 10%;
-`;
-
-export const LogoImg = styled.div`
-  height: 30%;
-  width: 100%;
 `;
 
 export const Title = styled.h2`

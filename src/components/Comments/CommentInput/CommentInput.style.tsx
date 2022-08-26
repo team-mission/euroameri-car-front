@@ -13,7 +13,6 @@ export const CommentWriteForm = styled(Form)`
 
 export const CommentInputBox = styled(Input.TextArea)`
   width: 100%;
-  height: 200px;
   margin-right: 10px;
   resize: none;
 `;

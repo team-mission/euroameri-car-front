@@ -9,7 +9,7 @@ import GuideMent from '@components/GuideMent';
 
 const ImportPage: NextPage = () => (
   <>
-    <MainHeader />
+    <MainHeader title="슈퍼카 및 일반 수입차 부품" />
     <SubHeader title="슈퍼카 및 일반 수입차 부품" />
     <MainWrapper>
       <GuideMent>해당 브랜드를 클릭하여 샘플 도면 참조</GuideMent>

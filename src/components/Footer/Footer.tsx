@@ -27,30 +27,52 @@ const Footer = () => {
 
   return (
     <styles.FooterWrapper>
-      <styles.CompInfoWrapper>
-        <styles.FlagImgWrapper>
-          <ImgWrapper src={IMG_URL.flag_KR} />
-        </styles.FlagImgWrapper>
-        <styles.Text>{COMP_INFO.address.office_KR}</styles.Text>
-        <styles.Text>{`Tel: ${COMP_INFO.number.tel_KR}`}</styles.Text>
-        <styles.Text>{`Fax: ${COMP_INFO.number.fax_KR}`}</styles.Text>
-      </styles.CompInfoWrapper>
-      <styles.Center>
+      <styles.AdminInfoWrapper>
         <styles.EmailArea>
           <styles.Text>{COMP_INFO.email.main}</styles.Text>
         </styles.EmailArea>
         <styles.AdminButton onClick={adminBtnClick}>
           {adminMode ? 'LOGOUT' : 'ADMIN'}
         </styles.AdminButton>
-      </styles.Center>
-      <styles.CompInfoWrapper>
+      </styles.AdminInfoWrapper>
+      <styles.ImgRowWrapper>
+        <styles.FlagImgWrapper>
+          <ImgWrapper src={IMG_URL.flag_KR} />
+        </styles.FlagImgWrapper>
+        <styles.LogoImgWrapper>
+          <ImgWrapper
+            src={IMG_URL.logo}
+            placeholder="empty"
+            priority
+            layout="intrinsic"
+            width={160}
+            height={30}
+          />
+        </styles.LogoImgWrapper>
         <styles.FlagImgWrapper>
           <ImgWrapper src={IMG_URL.flag_US} />
         </styles.FlagImgWrapper>
-        <styles.Text>{COMP_INFO.address.office_US}</styles.Text>
-        <styles.Text>{`Tel: ${COMP_INFO.number.tel_US}`}</styles.Text>
-        <styles.Text>{`Fax: ${COMP_INFO.number.fax_US}`}</styles.Text>
-      </styles.CompInfoWrapper>
+      </styles.ImgRowWrapper>
+      <styles.InfoRowWrapper>
+        <styles.CompInfoWrapper>
+          <styles.Text>{COMP_INFO.address.office_KR}</styles.Text>
+          <styles.Text>{`Tel: ${COMP_INFO.number.tel_KR}`}</styles.Text>
+          <styles.Text>{`Fax: ${COMP_INFO.number.fax_KR}`}</styles.Text>
+        </styles.CompInfoWrapper>
+        <styles.AdminInfoWrapper>
+          <styles.EmailArea>
+            <styles.Text>{COMP_INFO.email.main}</styles.Text>
+          </styles.EmailArea>
+          <styles.AdminButton onClick={adminBtnClick}>
+            {adminMode ? 'LOGOUT' : 'ADMIN'}
+          </styles.AdminButton>
+        </styles.AdminInfoWrapper>
+        <styles.CompInfoWrapper>
+          <styles.Text>{COMP_INFO.address.office_US}</styles.Text>
+          <styles.Text>{`Tel: ${COMP_INFO.number.tel_US}`}</styles.Text>
+          <styles.Text>{`Fax: ${COMP_INFO.number.fax_US}`}</styles.Text>
+        </styles.CompInfoWrapper>
+      </styles.InfoRowWrapper>
     </styles.FooterWrapper>
   );
 };
