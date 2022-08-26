@@ -33,6 +33,7 @@ export const FormWrapper = styled(Form)`
 
 export const InputBox = styled(Input)`
   width: 100%;
+  border-radius: 0;
   border-bottom: 1px solid rgba(222, 0, 17, 1);
 
   &:focus {
