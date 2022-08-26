@@ -106,12 +106,6 @@ export const EmailArea = styled.div`
   height: 100%;
 `;
 
-export const AdminButton = styled.div`
-  font-size: 0.8rem;
-  font-weight: 400;
-  cursor: pointer;
-`;
-
 export const Text = styled.p`
   font-size: 0.75rem;
   font-weight: 400;
