@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
 import { WAREHOUSE_IMG_COUNT, IMG_URL } from '@constants';
 import MainHeader from '@components/MainHeader';
