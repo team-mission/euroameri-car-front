@@ -4,7 +4,7 @@ import { MEDIA_QUERIES } from '@constants/styles';
 export const MainHeaderWrapper = styled.header`
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 420px;
   display: flex;
   font-size: 1.05rem;
 
