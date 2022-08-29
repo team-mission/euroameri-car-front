@@ -7,7 +7,7 @@ export const FooterWrapper = styled.footer`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 150px;
+  height: 190px;
   padding: 1rem 3rem;
   background-color: rgba(217, 217, 217, 1);
 
@@ -50,8 +50,9 @@ export const FlagImgWrapper = styled.div`
   }
 `;
 
-export const LogoImgWrapper = styled.div`
+export const LogoImgWrapper = styled.a`
   position: relative;
+  cursor: pointer;
 
   ${MEDIA_QUERIES.mobile} {
     display: none;
@@ -62,7 +63,7 @@ export const CompInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 250px;
+  width: 330px;
   height: 100%;
   padding: 5px 0;
 
@@ -99,15 +100,21 @@ export const AdminInfoWrapper = styled.div`
   }
 `;
 
-export const EmailArea = styled.div`
+export const EmailArea = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  color: black;
   height: 100%;
 `;
 
 export const Text = styled.p`
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 400;
   margin: 0;
+
+  ${MEDIA_QUERIES.tablet} {
+    font-size: 0.8rem;
+  }
 `;
