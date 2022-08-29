@@ -7,6 +7,7 @@ export const Text = styled.div`
   align-items: center;
   width: 100%;
   font-size: 1rem;
+  word-break: keep-all;
 
   & > a {
     color: black;
