@@ -14,6 +14,7 @@ export const ExplainWrapper = styled.section`
 export const Text = styled.p`
   width: 100%;
   font-size: 1rem;
+  word-break: keep-all;
 
   ${MEDIA_QUERIES.tablet} {
     font-size: 0.9rem;

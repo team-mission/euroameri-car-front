@@ -13,7 +13,11 @@ export const BENCHMARK_BRAND = [
 ] as const;
 
 export const BENCHMARK_INFO = {
-  Hyundai_Transys: ['powertrains', 'engine/trans', 'drive shafts', 'ev motors'],
+  Hyundai_Transys: [
+    `POWER TRAINS (ENGINE/TRANS/DRIVE SHAFTS)`,
+    'EV MOTORS/ INVERTERS',
+    'CAR/ AIRCRAFT SEATS',
+  ],
   Incheon_Airport: ['snow vehicle parts', 'bhs parts', 'various filters'],
   Sejong: ['catalytic converters', 'center/rear mufflers'],
   Autoliv: ['airbags', 'seat belts', 'dashboards/trims'],
@@ -23,5 +27,5 @@ export const BENCHMARK_INFO = {
   Tenergy: ['transfer cases', 'gear motors', 'sensors'],
   Kamtec: ['turbo chargers', 'various valves'],
   Jmft: ['differentials'],
-  Faurecia: ['the rods'],
+  Faurecia: ['tie rods'],
 };
