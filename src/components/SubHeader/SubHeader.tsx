@@ -15,7 +15,7 @@ const SubHeader = ({ title }: SubHeaderProps) => (
           placeholder="empty"
           priority
           layout="intrinsic"
-          width={140}
+          width={170}
           height={30}
         />
       </styles.LogoWrapper>

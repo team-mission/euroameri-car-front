@@ -7,6 +7,16 @@ export const Text = styled.div`
   align-items: center;
   width: 100%;
   font-size: 1rem;
+  word-break: keep-all;
+
+  & > a {
+    color: black;
+    text-decoration: none;
+
+    :hover {
+      color: rgba(1, 128, 254, 1);
+    }
+  }
 
   ${MEDIA_QUERIES.mobile} {
     font-size: 0.8rem;

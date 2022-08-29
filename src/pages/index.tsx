@@ -14,10 +14,10 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <MainHeader title="유럽 미국 일본 외산차 및 부품 유통" />
+      <MainHeader title="슈퍼카 및 유럽 미국 일본 수입차 부품 유통" />
       <MainWrapper>
         <Explanation />
-        <Carousel images={imgUrlArr} title="창고 사진" />
+        <Carousel images={imgUrlArr} title="유로아메리카주식회사" />
       </MainWrapper>
       <Footer />
     </>
