@@ -13,7 +13,7 @@ const BenchmarkBox = ({ brandImg, benchmarkInfos }: BenchmarkBoxProps) => (
     </styles.BrandImgWrapper>
     <styles.ContentWrapper>
       {benchmarkInfos.map((info) => (
-        <styles.Text key={info}>{`- ${info}`}</styles.Text>
+        <styles.Text key={info}>{`${info}`}</styles.Text>
       ))}
     </styles.ContentWrapper>
   </styles.BenchmarkBoxWrapper>

@@ -5,7 +5,7 @@ export const BenchmarkBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 23%;
-  height: 170px;
+  min-height: 170px;
   margin: 1%;
   box-shadow: 0 0 8px rgb(0 0 0 / 10%);
 
@@ -28,19 +28,20 @@ export const BrandImgWrapper = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 0 30px;
+  margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-top: none;
 `;
 
-export const Text = styled.span`
+export const Text = styled.li`
   font-size: 0.75rem;
   text-transform: uppercase;
 
