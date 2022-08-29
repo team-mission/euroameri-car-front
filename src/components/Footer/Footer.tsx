@@ -12,9 +12,11 @@ const AdminButton = dynamic(() => import('@components/AdminButton'), {
 const Footer = () => (
   <styles.FooterWrapper>
     <styles.AdminInfoWrapper>
-      <styles.EmailArea>
-        <styles.Text>{COMP_INFO.email.main}</styles.Text>
-      </styles.EmailArea>
+      <Link href="mailto:sales@euroamericar.com" passHref>
+        <styles.EmailArea>
+          <styles.Text>{COMP_INFO.email.main}</styles.Text>
+        </styles.EmailArea>
+      </Link>
       <AdminButton />
     </styles.AdminInfoWrapper>
     <styles.ImgRowWrapper>
