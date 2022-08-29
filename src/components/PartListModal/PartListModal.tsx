@@ -36,7 +36,6 @@ const PartListModal = ({ brand, closeModal }: PartListModalProps) => {
                   layout="intrinsic"
                   width={1200}
                   height={900}
-                  priority
                 />
               </styles.PartImgWrapper>
             ))}
