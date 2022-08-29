@@ -107,6 +107,10 @@ export const EmailArea = styled.a`
   text-decoration: none;
   color: black;
   height: 100%;
+
+  :hover {
+    color: rgba(1, 128, 254, 1);
+  }
 `;
 
 export const Text = styled.p`
