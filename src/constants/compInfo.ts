@@ -10,6 +10,6 @@ export const COMP_INFO = {
     office_US: '3525 Mall Blvd #5AA, Duluth, GA 30096 USA',
   },
   email: {
-    main: 'sales@euromericar.com',
+    main: 'sales@euroamericar.com',
   },
 };
