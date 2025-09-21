@@ -1,4 +1,5 @@
 import { atomWithStorage } from 'jotai/utils';
+import { adminLogOutAsync } from '@apis/admin';
 
 export const adminModeAtom = atomWithStorage<boolean>('adminMode', false);
 
@@ -68,10 +69,7 @@ export const handleLogout = async () => {
     
     // 3. 서버 세션 정리 (강제 로그아웃)
     try {
-      await fetch('/admin/logout', { 
-        method: 'POST',
-        credentials: 'include'
-      });
+      await adminLogOutAsync();
     } catch (error) {
       console.error('Force logout failed:', error);
     }
