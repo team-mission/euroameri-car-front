@@ -1,17 +1,27 @@
 import { useRouter } from 'next/router';
-import { useCallback } from 'react';
-import { useAtom } from 'jotai';
+import { useCallback, useState, useEffect } from 'react';
 
-import { adminModeAtom, handleLogout } from '@store/atom';
+import { checkConnectSid, handleLogout } from '@store/atom';
 import * as styles from './AdminButton.style';
 
 const Adminbutton = () => {
   const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const [adminMode, setAdminMode] = useAtom(adminModeAtom);
+  // 쿠키 상태 확인
+  useEffect(() => {
+    setIsLoggedIn(checkConnectSid());
+
+    // 1초마다 쿠키 상태 체크
+    const interval = setInterval(() => {
+      setIsLoggedIn(checkConnectSid());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const adminBtnClick = useCallback(async () => {
-    if (!adminMode) {
+    if (!isLoggedIn) {
       router.push(`/admin`);
       return;
     }
@@ -20,20 +30,14 @@ const Adminbutton = () => {
     try {
       // 완전한 로그아웃 처리 (connect.sid, euroameri.sid 모두 삭제)
       await handleLogout();
-      
-      // 상태 업데이트
-      setAdminMode(false);
-      
     } catch (error) {
       console.error('Logout failed:', error);
-      // 오류가 발생해도 로컬 상태는 정리
-      setAdminMode(false);
     }
-  }, [adminMode, router, setAdminMode]);
+  }, [isLoggedIn, router]);
 
   return (
     <styles.StyledButton onClick={adminBtnClick}>
-      {adminMode ? 'LOGOUT' : 'ADMIN'}
+      {isLoggedIn ? 'LOGOUT' : 'ADMIN'}
     </styles.StyledButton>
   );
 };

@@ -2,8 +2,6 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback } from 'react';
 import { message } from 'antd';
-import { useAtom } from 'jotai';
-
 import MainHeader from '@components/MainHeader';
 import SubHeader from '@components/SubHeader';
 import MainWrapper from '@components/MainWrapper';
@@ -15,13 +13,11 @@ import InputModal from '@components/InputModal';
 import { deletePostAsync, getPostDetailAsync } from '@apis/post';
 import { getCommentsAsync } from '@apis/comment';
 import { PostDetailType, CommentType } from '@apis/type';
-import { adminModeAtom } from '@store/atom';
+import { checkConnectSid } from '@store/atom';
 
 const PostDetailPage: NextPage = () => {
   const router = useRouter();
   const postId = Number(router.query.pid);
-
-  const [adminMode, setAdminMode] = useAtom(adminModeAtom);
 
   const [postData, setPostData] = useState<PostDetailType | undefined>();
   const [commentsData, setCommentsData] = useState<CommentType[]>([]);

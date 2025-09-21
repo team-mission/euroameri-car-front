@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useCallback } from 'react';
 import { message } from 'antd';
-import { useAtom } from 'jotai';
 
 import MainHeader from '@components/MainHeader';
 import SubHeader from '@components/SubHeader';
@@ -10,13 +9,10 @@ import MainWrapper from '@components/MainWrapper';
 import InputModal from '@components/InputModal';
 import Footer from '@components/Footer';
 
-import { adminModeAtom, setAdminModeOnCookieSet } from '@store/atom';
 import { adminLoginAsync } from '@apis/admin';
 
 const AdminLoginPage: NextPage = () => {
   const router = useRouter();
-
-  const [adminMode, setAdminMode] = useAtom(adminModeAtom);
 
   const [adminId, setAdminId] = useState<string>('');
   const [adminPassword, setAdminPassword] = useState<string>('');
@@ -32,16 +28,14 @@ const AdminLoginPage: NextPage = () => {
   const onSubmit = useCallback(async () => {
     if (!adminId || !adminPassword) {
       message.warn('아이디, 비밀번호를 입력하세요');
+      return;
     }
 
     const res = await adminLoginAsync(adminId, adminPassword);
 
     if (res.isSuccess) {
-      setAdminMode(true);
-      // 쿠키 설정 후 connect.sid 체크하고 adminMode 설정
-      setTimeout(() => {
-        setAdminModeOnCookieSet();
-      }, 100); // 쿠키 설정 후 약간의 지연을 두고 체크
+      // 로그인 성공 시 바로 board 페이지로 이동
+      // connect.sid 쿠키는 서버에서 자동으로 설정됨
       router.push('/board');
       return;
     }
@@ -50,7 +44,7 @@ const AdminLoginPage: NextPage = () => {
     if (res.result.statusCode === 401) {
       message.warn('로그인 실패');
     }
-  }, [adminId, adminPassword, router, setAdminMode]);
+  }, [adminId, adminPassword, router]);
 
   return (
     <>

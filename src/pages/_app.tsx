@@ -1,19 +1,9 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useEffect } from 'react';
 import '@constants/styles/global.css';
 import 'antd/dist/antd.css';
-import { initializeAuthState, setAdminModeOnCookieSet } from '@store/atom';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    // 앱 초기화 시 쿠키 상태 체크 및 adminMode 자동 정리
-    initializeAuthState();
-    
-    // 쿠키 설정 시 connect.sid 체크하고 adminMode 설정
-    setAdminModeOnCookieSet();
-  }, []);
-
   return (
     <>
       <Head>

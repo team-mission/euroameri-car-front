@@ -1,8 +1,7 @@
-import { useCallback } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { List, Comment, Tooltip, message } from 'antd';
-import { useAtom } from 'jotai';
 
-import { adminModeAtom } from '@store/atom';
+import { checkConnectSid } from '@store/atom';
 import { CommentType } from '@apis/type';
 import { formatDate } from '@utils/date';
 import { deleteCommentAsync } from '@apis/comment';
@@ -16,7 +15,19 @@ interface CommentsProps {
 }
 
 const Comments = ({ postId, data, refetch }: CommentsProps) => {
-  const [adminMode, setAdminMode] = useAtom(adminModeAtom);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // 쿠키 상태 확인
+  useEffect(() => {
+    setIsLoggedIn(checkConnectSid());
+
+    // 1초마다 쿠키 상태 체크
+    const interval = setInterval(() => {
+      setIsLoggedIn(checkConnectSid());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const onDelte = useCallback(
     async (commId: number) => {
@@ -34,7 +45,7 @@ const Comments = ({ postId, data, refetch }: CommentsProps) => {
 
   return (
     <>
-      {adminMode && <CommentInput postId={postId} refetch={refetch} />}
+      {isLoggedIn && <CommentInput postId={postId} refetch={refetch} />}
       {data.length > 0 && (
         <List
           header="관리자 답변"
@@ -51,7 +62,7 @@ const Comments = ({ postId, data, refetch }: CommentsProps) => {
                   </Tooltip>
                 }
                 actions={
-                  adminMode
+                  isLoggedIn
                     ? [
                         <styles.CommentDelBtn
                           key="list-loadmore-edit"
