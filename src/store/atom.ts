@@ -1,14 +1,6 @@
 import { atomWithStorage } from 'jotai/utils';
 import { adminLogOutAsync } from '@apis/admin';
 
-// connect.sid 쿠키 상태에 따라 adminMode 초기값 설정
-const getInitialAdminMode = (): boolean => {
-  if (typeof window === 'undefined') return false;
-
-  const hasConnectSid = checkConnectSid();
-  return hasConnectSid;
-};
-
 // 쿠키에서 connect.sid 체크하는 함수
 export const checkConnectSid = (): boolean => {
   if (typeof window === 'undefined') return false;
@@ -19,6 +11,14 @@ export const checkConnectSid = (): boolean => {
   );
 
   return !!connectSidCookie;
+};
+
+// connect.sid 쿠키 상태에 따라 adminMode 초기값 설정
+const getInitialAdminMode = (): boolean => {
+  if (typeof window === 'undefined') return false;
+
+  const hasConnectSid = checkConnectSid();
+  return hasConnectSid;
 };
 
 export const adminModeAtom = atomWithStorage<boolean>(
