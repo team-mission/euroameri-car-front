@@ -11,6 +11,7 @@ import GuideMent from '@components/GuideMent';
 
 import { getPostListAsync } from '@apis/posts';
 import { PostType } from '@apis/type';
+import { setAdminModeOnCookieSet } from '@store/atom';
 
 const BoardPage: NextPage = () => {
   const router = useRouter();
@@ -41,6 +42,11 @@ const BoardPage: NextPage = () => {
 
     updateData();
   }, [page, router.isReady]);
+
+  // 쿠키 설정 시 connect.sid 체크하고 adminMode 설정
+  useEffect(() => {
+    setAdminModeOnCookieSet();
+  }, []);
 
   const movePostDetailPage = useCallback(
     (id: number) => {

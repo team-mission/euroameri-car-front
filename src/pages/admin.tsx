@@ -10,7 +10,7 @@ import MainWrapper from '@components/MainWrapper';
 import InputModal from '@components/InputModal';
 import Footer from '@components/Footer';
 
-import { adminModeAtom } from '@store/atom';
+import { adminModeAtom, setAdminModeOnCookieSet } from '@store/atom';
 import { adminLoginAsync } from '@apis/admin';
 
 const AdminLoginPage: NextPage = () => {
@@ -38,6 +38,10 @@ const AdminLoginPage: NextPage = () => {
 
     if (res.isSuccess) {
       setAdminMode(true);
+      // 쿠키 설정 후 connect.sid 체크하고 adminMode 설정
+      setTimeout(() => {
+        setAdminModeOnCookieSet();
+      }, 100); // 쿠키 설정 후 약간의 지연을 두고 체크
       router.push('/board');
       return;
     }
